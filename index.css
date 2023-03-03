@@ -1,18 +1,41 @@
+/* Set initial positioning of image */
 .image-left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-right: 10px;
-  transform: scale(0.1) translateX(-100%);
-  animation: moveImage 5s linear infinite;
-  transform-origin: left top;
+    position: fixed; /* the element will be positioned relative to the viewport */
+    top: 50%; /* Move down from original location */
+    left: 50%; /* Move right from original location */
+    transform: translate(-50%, -50%) scale(1); /* center the element and set initial scale*/
 }
 
-@keyframes moveImage {
+/* Set up animation */
+@keyframes move-zigzag {
   0% {
-    transform: scale(0.1) translateX(-100%);
+    transform: translate(-50%, -50%) scale(1.2) translateY(0px);
   }
+  
+  20% {
+    transform: translate(-45%, -40%) scale(1.4) rotate(30deg);
+  }
+  
+  40% {
+    transform: translate(-80%, -90%) scale(1.6) rotate(-50deg);
+  }
+  
+  60% {
+    transform: translate(30%, -120%) scale(1.8) rotate(100deg);
+  }
+  
+  80% {
+    transform: translate(-65%, -10%) scale(1.4) rotate(-30deg);
+  }
+  
   100% {
-    transform: scale(0.1) translateX(100%);
+    transform: translate(-50%, -50%) scale(1.2) translateY(0px);
   }
+}
+
+.image-left {
+    animation-name: move-zigzag;
+    animation-duration: 1s; /* The duration for one cycle of the animation */
+    animation-timing-function: ease-in-out; /* a speed curve function to use during the transition*/
+    animation-iteration-count: infinite; /* The number of times the animation should repeat*/
 }
