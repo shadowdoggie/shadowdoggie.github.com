@@ -1,0 +1,125 @@
+body {
+    height: 601px;
+    width: 1019px;
+    margin-right: 15px;
+    position: absolute;
+    border: solid #3b5999;
+}
+
+#aboutTFB {
+    background-color: #3b5999;
+    color:white;
+    padding-left: 1px;   
+}
+
+#welcomeTextHeader {
+    color:black;
+    margin-left: 44%;
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+#theProjectDiv {
+    background-color: #3b5999;
+    color:white;
+    padding-left: 2.5px; 
+    margin-top: 20px;
+    margin-right: 60px;
+    margin-left: 60px;
+}
+
+#theProjectContentsDiv{
+padding-bottom: 70px;
+border: solid thin #3b5999;
+margin-right: 60px;
+margin-left: 60px;
+}
+
+#theProjectDescription1 {
+    font-size: 21px;
+    margin-top: 18px;
+    margin-left: 20px;
+}
+
+#theProjectDescription2 {
+    margin-left: 20px;
+    font-size: 21px;
+}
+
+#thePeopleDiv {
+    background-color: #3b5999;
+    color:white;
+    padding-left: 2.5px; 
+    margin-top: 20px;
+    margin-right: 60px;
+    margin-left: 60px;
+}
+
+#thePeopleBorderDiv{
+    padding-bottom: 10px;
+    border: solid thin #3b5999;
+    margin-right: 60px;
+    margin-left: 60px;
+    }
+
+#thePeopleContentsDiv{
+    padding-bottom: 70px;
+    margin-top: 22px;
+    margin-left: 20px;
+
+}
+    
+#thePeopleDescription1 {
+    margin-top: -20px;
+    margin-left: 150px;
+    font-size: 21px;
+}
+
+#thePeopleDescription2 {
+    margin-top: -20px;
+    margin-left: 150px;
+    font-size: 21px;
+}
+
+#thePeopleDescription3 {
+    margin-top: -20px;
+    margin-left: 150px;
+    font-size: 21px;
+}
+
+#markZuckerbergButton {
+    background-color: transparent;
+    color: #538adc;
+    cursor: pointer;
+}
+
+#eduardoSaverinButton {
+    background-color: transparent;
+    color: #538adc;
+    cursor: pointer;
+}
+
+#andrewMcCollumButton {
+    background-color: transparent;
+    color: #538adc;
+    cursor: pointer;
+}
+
+#contactUsButton {
+    background-color: transparent;
+    color: #538adc;
+    cursor: pointer;
+    margin-top: 30px;
+    position: absolute;
+}
+
+#homeButton{
+    background-color: #538adc;
+    color: white;
+    cursor: pointer;
+    margin-top: 75px;
+    margin-left: 470.5px;
+    position: absolute;
+    border-color: gray;
+}
