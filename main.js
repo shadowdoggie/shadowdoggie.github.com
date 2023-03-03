@@ -12,24 +12,28 @@ buttons.forEach(button => {
     
     button.addEventListener('click', () => {
         if (button.innerHTML === '=') {
-            result.value = eval(result.value);
-            document.getElementById('button-sound-equals').currentTime = 0;
-            document.getElementById('button-sound-equals').play(); // Play button sound for =
-        } 
-        else if (button.innerHTML === 'C') {
+            // Check if there is a valid calculation to be made
+            if (result.value && /[0-9]+[+\-*\/][0-9]+/.test(result.value)) {
+                result.value = eval(result.value);
+                document.getElementById('button-sound-equals').currentTime = 0;
+                document.getElementById('button-sound-equals').play(); // Play button sound for =
+            } else { // No valid calculation to be made
+                result.value = 'Error';
+                document.getElementById('button-sound-error').currentTime = 0;
+                document.getElementById('button-sound-error').play(); // Play error sound
+            }
+        } else if (button.innerHTML === 'C') {
             result.value = '';
             document.getElementById('button-sound-clear').currentTime = 0;
             document.getElementById('button-sound-clear').play(); // Play button sound for C
-        }
-        else {
+        } else if (/[\+\-\*\/]/.test(button.innerHTML)) { // test if the button is a symbol (+,-,*,/)
             result.value += button.innerHTML;
-            if (/\+|\-|\*|\//.test(button.innerHTML)) { // test if the button is a symbol (+,-,*,/)
-                document.getElementById('button-sound-symbol').currentTime = 0;
-                document.getElementById('button-sound-symbol').play(); // Play button sound for symbols
-            } else {
-                audioElement.currentTime = 0;
-                audioElement.play(); // Play button sound
-            }
+            document.getElementById('button-sound-symbol').currentTime = 0;
+            document.getElementById('button-sound-symbol').play(); // Play button sound for symbols
+        } else {
+            result.value += button.innerHTML;
+            audioElement.currentTime = 0;
+            audioElement.play(); // Play button sound
         }
 
         // Animate spark effect
