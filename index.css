@@ -1,41 +1,34 @@
-/* Set initial positioning of image */
 .image-left {
-    position: fixed; /* the element will be positioned relative to the viewport */
-    top: 50%; /* Move down from original location */
-    left: 50%; /* Move right from original location */
-    transform: translate(-50%, -50%) scale(1); /* center the element and set initial scale*/
+    /* Set initial positioning of image */
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
 }
 
-/* Set up animation */
-@keyframes move-zigzag {
-  0% {
-    transform: translate(-50%, -50%) scale(1.2) translateY(0px);
-  }
-  
-  20% {
-    transform: translate(-45%, -40%) scale(1.4) rotate(30deg);
-  }
-  
-  40% {
-    transform: translate(-80%, -90%) scale(1.6) rotate(-50deg);
-  }
-  
-  60% {
-    transform: translate(30%, -120%) scale(1.8) rotate(100deg);
-  }
-  
-  80% {
-    transform: translate(-65%, -10%) scale(1.4) rotate(-30deg);
-  }
-  
-  100% {
-    transform: translate(-50%, -50%) scale(1.2) translateY(0px);
-  }
+/* Define animation keyframes */
+@keyframes move-and-spin {
+    0% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg); 
+    }
+    25% {
+        transform: translate(50%, 50%) scale(1.2) rotate(360deg); 
+    }
+    50% {
+        transform: translate(20%, 70%) scale(0.8) rotate(-360deg); 
+    }
+    75% {
+        transform: translate(80%, 30%) scale(1.5) rotate(360deg); 
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1) rotate(-360deg); 
+    }
 }
 
+/* Assign animation to image */
 .image-left {
-    animation-name: move-zigzag;
-    animation-duration: 1s; /* The duration for one cycle of the animation */
-    animation-timing-function: ease-in-out; /* a speed curve function to use during the transition*/
-    animation-iteration-count: infinite; /* The number of times the animation should repeat*/
+    animation-name: move-and-spin;
 }
